@@ -18,5 +18,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biggersmatt/changeout-api.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/biggersmatt/changeout-api/issues"
+  },
+  "homepage": "https://github.com/biggersmatt/changeout-api#readme"
 }
