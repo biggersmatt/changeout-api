@@ -1,6 +1,7 @@
 const { Mongoose } = require("mongoose");
 
 const mongoose = require('mongoose');
+
 const connectionString = 'mongodb://localhost:27017/changeout';
 const options = {
   useNewUrlParser: true,
@@ -9,7 +10,10 @@ const options = {
   useUnifiedTopology: true,
 }
 
-
 mongoose.connect(connectionString, options)
   .then(() => console.log('MongoDB connected successfully'))
   .catch((err) => console.log(err));
+
+module.export = {
+  Endcap: require('./Endcap'),
+}
