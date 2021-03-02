@@ -9,3 +9,5 @@ router.get('/:id', controllers.endcaps.show);
 router.post('/', controllers.endcaps.create);
 router.post('/:id', controllers.endcaps.update);
 router.delete('/:id', controllers.endcaps.destroy);
+
+module.exports = router;
