@@ -14,6 +14,6 @@ mongoose.connect(connectionString, options)
   .then(() => console.log('MongoDB connected successfully'))
   .catch((err) => console.log(err));
 
-module.export = {
+module.exports = {
   Endcap: require('./Endcap'),
 }

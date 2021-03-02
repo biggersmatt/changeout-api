@@ -1,7 +1,10 @@
 const db = require('../models');
 
 const index = (req, res) => {
-  res.send('<h1>Endcaps Index</h1>');
+  db.Endcap.find({}, (err, allEndcaps) => {
+    if(err) return console.log(err);
+    res.json({allEndcaps})
+  })
 }
 
 const show = (req, res) => {
