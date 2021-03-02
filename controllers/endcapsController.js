@@ -3,12 +3,15 @@ const db = require('../models');
 const index = (req, res) => {
   db.Endcap.find({}, (err, allEndcaps) => {
     if(err) return console.log(err);
-    res.json({allEndcaps})
+    res.json({allEndcaps});
   })
 }
 
 const show = (req, res) => {
-  res.send('<h1>Endcaps Show</h1>');
+  db.Endcap.findById(req.params.id, (err, foundEndcap) => {
+    if(err) console.log(err);
+    res.json({foundEndcap});
+  })
 }
 
 const create = (req, res) => {
