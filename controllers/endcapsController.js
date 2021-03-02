@@ -15,7 +15,10 @@ const show = (req, res) => {
 }
 
 const create = (req, res) => {
-  res.send('<h1>Endcaps create</h1>');
+  db.Endcap.create(req.body, (err, newEndcap) => {
+    if(err) console.log(err);
+    res.json({newEndcap});
+  })
 }
 
 const update = (req, res) => {
