@@ -34,7 +34,10 @@ const update = (req, res) => {
 }
 
 const destroy = (req, res) => {
-  res.send('<h1>Endcaps destroy</h1>');
+  db.Endcap.findByIdAndDelete(req.params.id, (err, deletedEndcap) => {
+    if(err) console.log(err);
+    res.json(deletedEndcap);
+  })
 }
 
 module.exports = {
