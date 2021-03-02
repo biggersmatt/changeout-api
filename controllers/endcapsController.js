@@ -22,7 +22,15 @@ const create = (req, res) => {
 }
 
 const update = (req, res) => {
-  res.send('<h1>Endcaps update</h1>');
+  db.Endcap.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {new: true},
+    (err, updatedEndcap) => {
+      if(err) console.log(err);
+      res.json(updatedEndcap);
+    }
+  )
 }
 
 const destroy = (req, res) => {
