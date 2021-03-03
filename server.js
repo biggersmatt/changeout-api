@@ -1,14 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 4000;
 const routes = require('./routes');
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-
-// require('./models');
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('<h1>Change Out Api</h1>')
