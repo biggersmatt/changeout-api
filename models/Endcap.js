@@ -10,10 +10,7 @@ const endcapSchema = new mongoose.Schema({
   itemThree: String,
   itemFour: String,
   itemFive: String,
-  change: {
-    type: Boolean,
-    default: false,
-  },
+  change: Boolean,
 })
 
 const Endcap = mongoose.model('Endcap', endcapSchema);
