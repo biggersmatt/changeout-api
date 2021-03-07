@@ -1,3 +1,4 @@
 module.exports = {
-  endcaps: require('./endcapsController.js'),
+  endcaps: require('./endcapsController'),
+  flanks: require('./flanksController'),
 }
