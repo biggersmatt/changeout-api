@@ -1,11 +1,17 @@
 const db = require('../models');
 
 const index = (req, res) => {
-  db.Endcap.find({}, (err, allEndcaps) => {
+  db.Endcap.find({}).populate('flanks').exec((err, allEndcaps) => {
     if(err) return console.log(err);
     res.json({allEndcaps});
   })
 }
+
+// function getUserWithPosts(username){
+//   return User.findOne({ username: username }).populate('posts').exec((err, posts) => {
+//       console.log("Populated User " + posts);
+//     })
+// }
 
 const show = (req, res) => {
   db.Endcap.findById(req.params.id, (err, foundEndcap) => {

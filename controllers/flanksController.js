@@ -21,7 +21,7 @@ const create = (req, res) => {
     res.json({newFlank});
     db.Endcap.findByIdAndUpdate(
       req.body.selectedEndcap,
-      {$push: {flanks: newFlank._id} },
+      {$push: {flanks: newFlank} },
       {new: true},
       (err, updatedEndcap) => {
         if(err) console.log(err);
@@ -46,6 +46,7 @@ const destroy = (req, res) => {
   db.Flank.findByIdAndDelete(req.params.id, (err, deletedFlank) => {
     if(err) console.log(err);
     res.json(deletedFlank);
+    
   })
 }
 

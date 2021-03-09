@@ -12,6 +12,10 @@ const flankSchema = new mongoose.Schema({
   itemFive: String,
   change: Boolean,
   side: String,
+  endcap: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Endcap',
+    },
 })
 
 const Flank = mongoose.model('Flank', flankSchema);

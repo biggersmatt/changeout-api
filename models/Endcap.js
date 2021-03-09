@@ -15,6 +15,7 @@ const endcapSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Flank',
+      limit: 2,
     }
   ],
 })
