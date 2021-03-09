@@ -7,12 +7,6 @@ const index = (req, res) => {
   })
 }
 
-// function getUserWithPosts(username){
-//   return User.findOne({ username: username }).populate('posts').exec((err, posts) => {
-//       console.log("Populated User " + posts);
-//     })
-// }
-
 const show = (req, res) => {
   db.Endcap.findById(req.params.id, (err, foundEndcap) => {
     if(err) console.log(err);
