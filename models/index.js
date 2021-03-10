@@ -17,4 +17,5 @@ mongoose.connect(connectionString, options)
 module.exports = {
   Endcap: require('./Endcap'),
   Flank: require('./Flank'),
+  Settings: require('./Settings'),
 }
