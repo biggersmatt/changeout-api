@@ -17,7 +17,7 @@ const settingsSchema = new mongoose.Schema({
   },
   promoMonth: {
     type: String,
-    default: 'Janurary',
+    default: 'January',
   },
   promoPeriod: {
     type: String,

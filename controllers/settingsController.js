@@ -18,6 +18,15 @@ const create = (req, res) => {
 
 const update = (req, res) => {
   console.log('Settings Update');
+  db.Settings.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {new: true},
+    (err, updatedSetting) => {
+      if(err) console.log(err);
+      res.json(updatedSetting);
+    }
+  )
 }
 
 module.exports = {
