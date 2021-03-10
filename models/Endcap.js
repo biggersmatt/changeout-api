@@ -11,13 +11,14 @@ const endcapSchema = new mongoose.Schema({
   itemFour: String,
   itemFive: String,
   change: Boolean,
-  flanks: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Flank',
-      limit: 2,
-    }
-  ],
+  flankA: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Flank',
+  },
+  flankB: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Flank',
+  },
 })
 
 const Endcap = mongoose.model('Endcap', endcapSchema);

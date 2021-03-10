@@ -17,16 +17,29 @@ const show = (req, res) => {
 
 const create = (req, res) => {
   db.Flank.create(req.body, (err, newFlank) => {
-    if(err) console.log(err);
-    res.json({newFlank});
-    db.Endcap.findByIdAndUpdate(
-      req.body.selectedEndcap,
-      {$push: {flanks: newFlank} },
-      {new: true},
-      (err, updatedEndcap) => {
-        if(err) console.log(err);
-      }
-    )
+    if(newFlank.side === 'A') {
+      if(err) console.log(err);
+      res.json({newFlank});
+      db.Endcap.findByIdAndUpdate(
+        req.body.selectedEndcap,
+        {$push: {flankA: newFlank}},
+        {new: true},
+        (err, updatedEndcap) => {
+          if(err) console.log(err);
+        }
+      )
+    } else if(newFlank.side === 'B') {
+      if(err) console.log(err);
+      res.json({newFlank});
+      db.Endcap.findByIdAndUpdate(
+        req.body.selectedEndcap,
+        {$push: {flankB: newFlank}},
+        {new: true},
+        (err, updatedEndcap) => {
+          if(err) console.log(err);
+        }
+      )
+    }
   })
 }
 

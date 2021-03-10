@@ -1,7 +1,7 @@
 const db = require('../models');
 
 const index = (req, res) => {
-  db.Endcap.find({}).populate('flanks').exec((err, allEndcaps) => {
+  db.Endcap.find({}).populate('flankA flankB').exec((err, allEndcaps) => {
     if(err) return console.log(err);
     res.json({allEndcaps});
   })
