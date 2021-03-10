@@ -5,7 +5,11 @@ const index = (req, res) => {
 }
 
 const create = (req, res) => {
-  console.log('Settings Create')
+  db.Settings.create(req.body, (err, newSettings) => {
+    if(err) console.log(err);
+    console.log(newSettings)
+    res.json({newSettings});
+  })
 }
 
 const update = (req, res) => {

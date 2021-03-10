@@ -1,9 +1,28 @@
 const mongoose = require('mongoose');
 
 const settingsSchema = new mongoose.Schema({
-  columnOrder: [],
-  promoMonth: String,
-  promoPeriod: String,
+  columnOrder: {
+    id: {
+      type: String,
+      default: 'column-1',
+    },
+    title: {
+      type: String,
+      default: 'To do',
+    },
+    endcapIds: {
+      type: Array,
+      default: '1',
+    }
+  },
+  promoMonth: {
+    type: String,
+    default: 'Janurary',
+  },
+  promoPeriod: {
+    type: String,
+    default: 'A',
+  },
 })
 
 const Settings = mongoose.model('Settings', settingsSchema);
