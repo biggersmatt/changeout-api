@@ -10,10 +10,7 @@ const settingsSchema = new mongoose.Schema({
       type: String,
       default: 'To do',
     },
-    endcapIds: {
-      type: Array,
-      default: '1',
-    }
+    endcapIds: [],
   },
   promoMonth: {
     type: String,
