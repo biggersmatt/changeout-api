@@ -25,10 +25,11 @@ const update = (req, res) => {
   db.Endcap.findByIdAndUpdate(
     req.params.id,
     req.body,
+    // { $unset : { flankB : 1} },
     {new: true},
     (err, updatedEndcap) => {
       if(err) console.log(err);
-      res.json(updatedEndcap);
+      res.json(req.body);
     }
   )
 }

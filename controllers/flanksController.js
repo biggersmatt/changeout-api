@@ -59,7 +59,26 @@ const destroy = (req, res) => {
   db.Flank.findByIdAndDelete(req.params.id, (err, deletedFlank) => {
     if(err) console.log(err);
     res.json(deletedFlank);
-    
+    const endcapId = req.body.match.url.slice(6, 30);
+    if(deletedFlank.side === 'A') {
+      db.Endcap.findByIdAndUpdate(
+        endcapId,
+        { $unset : { flankA : 1} },
+        {new: true},
+        (err, updatedEndcap) => {
+          if(err) console.log(err);
+        }
+      )
+    } else if(deletedFlank.side === 'B') {
+      db.Endcap.findByIdAndUpdate(
+        endcapId,
+        { $unset : { flankB : 1} },
+        {new: true},
+        (err, updatedEndcap) => {
+          if(err) console.log(err);
+        }
+      )
+    }
   })
 }
 
