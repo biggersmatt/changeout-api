@@ -19,6 +19,7 @@ const login = (req, res) => {
     if (req.body.password === foundUser.password){
       req.session.currentUser = foundUser;
       res.json(foundUser)
+      console.log('********', req.session.currentUser._id)
       return console.log('logged in.')
     }
   })
@@ -30,6 +31,7 @@ const logout = (req, res) => {
     if (err) console.log(err)
     console.log('db logout hit')
     res.json('User Logged Out')
+    
   })
 }
 

@@ -8,7 +8,10 @@ const index = (req, res) => {
 }
 
 const create = (req, res) => {
-  db.Settings.create(req.body, (err, newSettings) => {
+  //Establishes settings  user on default creation.
+  const settingsObj = req.body
+  settingsObj.user = req.session.currentUser._id
+  db.Settings.create(settingsObj, (err, newSettings) => {
     if(err) console.log(err);
     res.json({newSettings});
   })

@@ -13,10 +13,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  settings: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Settings'
-  }
 })
 
 const User = mongoose.model('User', userSchema)
