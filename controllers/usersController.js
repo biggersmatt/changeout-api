@@ -4,12 +4,26 @@ const create = (req, res) => {
   console.log(req.body)
   db.User.create(req.body, (err, newUser) => {
     if (err) return console.log(err);
-    req.session.currentUser = newUser
-    console.log(newUser),
-    res.json(newUser)
-    return console.log('account created')
+    // res.json(newUser)
+    const settingsObj = {}
+    settingsObj.user = newUser._id
+    db.Settings.create(settingsObj, (err, newSettings) => {
+      if(err) console.log(err);
+      res.json({newSettings});
+  })
   })
 }
+
+// const create = (req, res) => {
+//   console.log('setting controller page:::::::::', req.session.currentUser)
+//   //Establishes settings  user on default creation.
+//   const settingsObj = req.body
+//   settingsObj.user = req.session.currentUser._id
+//   db.Settings.create(settingsObj, (err, newSettings) => {
+//     if(err) console.log(err);
+//     res.json({newSettings});
+//   })
+// }
 
 const login = (req, res) => {
   console.log(req.body)
@@ -19,7 +33,7 @@ const login = (req, res) => {
     if (req.body.password === foundUser.password){
       req.session.currentUser = foundUser;
       res.json(foundUser)
-      console.log('********', req.session.currentUser._id)
+      console.log('********', req.session.currentUser)
       return console.log('logged in.')
     }
   })
