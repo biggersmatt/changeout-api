@@ -18,4 +18,5 @@ module.exports = {
   Endcap: require('./Endcap'),
   Flank: require('./Flank'),
   Settings: require('./Settings'),
+  User: require('./User')
 }

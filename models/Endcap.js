@@ -19,6 +19,10 @@ const endcapSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Flank',
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 })
 
 const Endcap = mongoose.model('Endcap', endcapSchema);

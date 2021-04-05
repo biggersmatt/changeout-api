@@ -20,6 +20,10 @@ const settingsSchema = new mongoose.Schema({
     type: String,
     default: 'A',
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 })
 
 const Settings = mongoose.model('Settings', settingsSchema);
