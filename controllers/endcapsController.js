@@ -33,10 +33,8 @@ const create = (req, res) => {
   if (!req.session.currentUser){
     res.status(400);
     res.send('Not logged In')
-    console.log('Not logged In')
     return;
   }
-  console.log(req.body)
   const endcapObj = req.body;
   endcapObj.user = req.session.currentUser._id
   db.Endcap.create(endcapObj, (err, newEndcap) => {

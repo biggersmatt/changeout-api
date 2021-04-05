@@ -12,14 +12,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 const CORS_DOMAIN = 'http://localhost:3000'
 
-
 app.use(cors({
   credentials: true,
   origin: CORS_DOMAIN
 }))
 
 
-// ******************* Express Sessions Stuff 
+// ******************* Express Sessions 
 const sess = {
   secret: 'arffarffwoofbark',
   resave: false,
@@ -29,16 +28,13 @@ const sess = {
     maxAge: 1000 * 60 * 60 * 24 * 7 * 2, //valid for 2 weeks. 
   }
 }
-
 if (process.env.NODE_ENV === 'production') {
   app.set('trust proxy', 1);
   sess.cookie.secure = true;
   console.log('process env chck hit')
 }
 app.use(session(sess))
-// ******************* Express Sessions Stuff 
-
-
+// ******************* Express Sessions
 
 app.get('/', (req, res) => {
   res.send('<h1>Change Out Api</h1>')
