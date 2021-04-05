@@ -25,12 +25,14 @@ const create = (req, res) => {
 
 const login = (req, res) => {
   db.User.findOne({company: req.body.company}, (err, foundUser) => {
-    if (!foundUser) return console.log('no user found')
-    if (req.body.password !== foundUser.password) return console.log('incorrect password')
+    if (!foundUser) return console.log('No User Found')
+    if (req.body.password !== foundUser.password) {
+      return console.log('Incorrect Password')
+    }
     if (req.body.password === foundUser.password){
       req.session.currentUser = foundUser;
       res.json(foundUser)
-      return console.log('logged in.')
+      return console.log('Logged In.')
     }
   })
 }
@@ -43,7 +45,7 @@ const logout = (req, res) => {
 }
 
 const destroy = (req, res) => {
-  console.log('destroy route hit')
+  console.log('Destroy Route Hit')
 }
 
 module.exports = {
