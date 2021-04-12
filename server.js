@@ -6,7 +6,7 @@ const app = express();
 
 const PORT = process.env.MONGODB_URI || 4000;
 const routes = require('./routes');
-require('dotenv').config();
+require('dotenv').config({path: './env'});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
