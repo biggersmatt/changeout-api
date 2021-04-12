@@ -6,6 +6,7 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 const routes = require('./routes');
+require('dotenv').config();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
