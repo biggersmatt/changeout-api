@@ -12,14 +12,10 @@ const settingsSchema = new mongoose.Schema({
     },
     endcapIds: [],
   },
-  promoMonth: {
-    type: String,
-    default: 'January',
-  },
-  promoPeriod: {
-    type: String,
-    default: 'A',
-  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 })
 
 const Settings = mongoose.model('Settings', settingsSchema);
