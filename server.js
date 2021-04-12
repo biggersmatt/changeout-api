@@ -4,7 +4,7 @@ const session = require('express-session')
 const cors = require('cors');
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.MONGODB_URI || 4000;
 const routes = require('./routes');
 require('dotenv').config();
 
