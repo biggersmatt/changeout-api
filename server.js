@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session')
@@ -6,7 +7,6 @@ const app = express();
 
 const PORT = process.env.MONGODB_URI || 4000;
 const routes = require('./routes');
-require('dotenv').config({path: './env'});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -27,6 +27,7 @@ const sess = {
   unset: 'destroy',
   cookie: {
     maxAge: 1000 * 60 * 60 * 24 * 7 * 2, //valid for 2 weeks. 
+    sameSite: 'none', 
   }
 }
 if (process.env.NODE_ENV === 'production') {
