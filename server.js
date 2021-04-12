@@ -11,7 +11,7 @@ require('dotenv').config();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-const CORS_DOMAIN = 'http://localhost:3000'
+const CORS_DOMAIN = 'https://calm-forest-99785.herokuapp.com/'
 
 app.use(cors({
   credentials: true,
@@ -41,10 +41,10 @@ app.get('/', (req, res) => {
   res.send('<h1>Change Out Api</h1>')
 })
 
-app.use('/api/endcaps', routes.endcaps);
-app.use('/api/flanks', routes.flanks);
-app.use('/api/settings', routes.settings);
-app.use('/api/users', routes.users)
+app.use('/endcaps', routes.endcaps);
+app.use('/flanks', routes.flanks);
+app.use('/settings', routes.settings);
+app.use('/users', routes.users)
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
