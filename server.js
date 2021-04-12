@@ -5,13 +5,13 @@ const session = require('express-session')
 const cors = require('cors');
 const app = express();
 
-const PORT = process.env.MONGODB_URI || 4000;
+const PORT = process.env.PORT || 4000;
 const routes = require('./routes');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-const CORS_DOMAIN = 'https://calm-forest-99785.herokuapp.com'
+const CORS_DOMAIN = process.env.CHANGE_OUT_CORS_DOMAIN;
 
 app.use(cors({
   credentials: true,
