@@ -15,9 +15,10 @@ const CORS_DOMAIN = process.env.CHANGE_OUT_CORS_DOMAIN;
 
 app.use(cors({
   credentials: true,
-  origin: CORS_DOMAIN
+  origin: CORS_DOMAIN,
 }))
 
+headers.set("Access-Control-Allow-Origin", "http://pzmap.crash-override.net")
 
 // ******************* Express Sessions 
 const sess = {
