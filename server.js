@@ -8,15 +8,15 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const routes = require('./routes');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
 const CORS_DOMAIN = process.env.CHANGE_OUT_CORS_DOMAIN;
 
 app.use(cors({
   credentials: true,
   origin: CORS_DOMAIN,
 }))
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 // ******************* Express Sessions 
 const sess = {
