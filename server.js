@@ -11,7 +11,7 @@ const routes = require('./routes');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-const CORS_DOMAIN = process.env.CHANGE_OUT_CORS_DOMAIN;
+const CORS_DOMAIN = process.env.CHANGE_OUT_CORS_DOMAIN | process.env.DEV_CORS_DOMAIN;
 
 app.use(cors({
   credentials: true,
