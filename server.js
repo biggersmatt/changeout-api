@@ -18,8 +18,6 @@ app.use(cors({
   origin: CORS_DOMAIN,
 }))
 
-headers.set("Access-Control-Allow-Origin", "http://pzmap.crash-override.net")
-
 // ******************* Express Sessions 
 const sess = {
   secret: 'arffarffwoofbark',
