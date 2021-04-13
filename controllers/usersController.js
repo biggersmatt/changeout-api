@@ -12,19 +12,8 @@ const create = (req, res) => {
   })
 }
 
-// const create = (req, res) => {
-//   console.log('setting controller page:::::::::', req.session.currentUser)
-//   //Establishes settings  user on default creation.
-//   const settingsObj = req.body
-//   settingsObj.user = req.session.currentUser._id
-//   db.Settings.create(settingsObj, (err, newSettings) => {
-//     if(err) console.log(err);
-//     res.json({newSettings});
-//   })
-// }
-
 const login = (req, res) => {
-  db.User.findOne({company: req.body.company}, (err, foundUser) => {
+  db.User.findOne({username: req.body.username}, (err, foundUser) => {
     if (!foundUser) return console.log('No User Found')
     if (req.body.password !== foundUser.password) {
       return console.log('Incorrect Password')
