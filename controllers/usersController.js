@@ -1,6 +1,6 @@
 const db = require('../models')
 
-const create = (req, res) => {
+// const create = (req, res) => {
   // db.User.create(req.body, (err, newUser) => {
   //   if (err) return console.log(err);
   //   const settingsObj = {}
@@ -10,7 +10,7 @@ const create = (req, res) => {
   //     res.json({newSettings});
   // })
   // })
-}
+// }
 
 // const login = (req, res) => {
 //   db.User.findOne({username: req.body.username}, (err, foundUser) => {
@@ -37,9 +37,9 @@ const create = (req, res) => {
 //   console.log('Destroy Route Hit')
 // }
 
-module.exports = {
-  create,
-  login,
-  logout,
-  destroy
-}
+// module.exports = {
+//   create,
+//   login,
+//   logout,
+//   destroy
+// }

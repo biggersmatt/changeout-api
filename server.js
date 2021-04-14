@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 app.use('/endcaps', routes.endcaps);
 app.use('/flanks', routes.flanks);
 app.use('/settings', routes.settings);
-app.use('/users', routes.users)
+// app.use('/users', routes.users)
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
