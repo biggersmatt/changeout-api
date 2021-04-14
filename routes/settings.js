@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const controllers = require('../controllers');
 
-// Current Path = '/api/settings'
+// Current Path = '/settings'
 
 // Settings Routes
 router.get('/', controllers.settings.index);

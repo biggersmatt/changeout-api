@@ -8,7 +8,7 @@ const index = (req, res) => {
 }
 
 const create = (req, res) => {
-  console.log('setting controller page:::::::::', req.session.currentUser)
+  // console.log('setting controller page:::::::::', req.session.currentUser)
   // //Establishes settings  user on default creation.
   // const settingsObj = req.body
   // settingsObj.user = req.session.currentUser._id

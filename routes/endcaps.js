@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const controllers = require('../controllers');
 
-// Current Path = '/api/endcaps'
+// Current Path = '/endcaps'
 
 // Endcap Routes
 router.get('/', controllers.endcaps.index);

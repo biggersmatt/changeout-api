@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const controllers = require('../controllers');
 
-// Current Path = '/api/users'
+// Current Path = '/users'
 
 router.post('/signup', controllers.users.create)
 router.post('/login', controllers.users.login)
