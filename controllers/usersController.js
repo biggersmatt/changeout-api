@@ -1,16 +1,17 @@
 const db = require('../models')
 
-// const create = (req, res) => {
-  // db.User.create(req.body, (err, newUser) => {
-  //   if (err) return console.log(err);
+const create = (req, res) => {
+  db.User.create(req.body, (err, newUser) => {
+    if(err) console.log(err);
+    res.json({newUser});
   //   const settingsObj = {}
   //   settingsObj.user = newUser._id
   //   db.Settings.create(settingsObj, (err, newSettings) => {
   //     if(err) console.log(err);
   //     res.json({newSettings});
   // })
-  // })
-// }
+  })
+}
 
 // const login = (req, res) => {
 //   db.User.findOne({username: req.body.username}, (err, foundUser) => {
@@ -37,9 +38,9 @@ const db = require('../models')
 //   console.log('Destroy Route Hit')
 // }
 
-// module.exports = {
-//   create,
-//   login,
-//   logout,
-//   destroy
-// }
+module.exports = {
+  create,
+  // login,
+  // logout,
+  // destroy
+}
