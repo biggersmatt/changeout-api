@@ -13,6 +13,18 @@ const create = (req, res) => {
   })
 }
 
+const update = (req, res) => {
+  db.User.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {new: true},
+    (err, columnOrder) => {
+      if(err) console.log(err);
+      res.json(columnOrder);
+    }
+  )
+}
+
 // const login = (req, res) => {
 //   db.User.findOne({username: req.body.username}, (err, foundUser) => {
 //     if (!foundUser) return console.log('No User Found')
@@ -40,6 +52,7 @@ const create = (req, res) => {
 
 module.exports = {
   create,
+  update,
   // login,
   // logout,
   // destroy
