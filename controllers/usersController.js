@@ -1,5 +1,12 @@
 const db = require('../models')
 
+const index = (req, res) => {
+  db.User.find({}, (err, allUsers) => {
+    if(err) return console.log(err);
+    res.json({allUsers});
+  })
+}
+
 const create = (req, res) => {
   db.User.create(req.body, (err, newUser) => {
     if(err) console.log(err);
@@ -51,6 +58,7 @@ const update = (req, res) => {
 // }
 
 module.exports = {
+  index,
   create,
   update,
   // login,

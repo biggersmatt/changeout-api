@@ -37,6 +37,15 @@ const create = (req, res) => {
   db.Endcap.create(endcapObj, (err, newEndcap) => {
     if(err) console.log(err);
     res.json({newEndcap});
+    db.User.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {new: true},
+      (err, columnOrder) => {
+        if(err) console.log(err);
+        // No res.json
+      }
+    )
   })
 }
 
