@@ -3,7 +3,7 @@ const { Mongoose } = require("mongoose");
 const mongoose = require('mongoose');
 
 // const connectionString = process.env.MONGODB_URI;
-const connectionString = "mongodb://localhost:27017/changout"
+const connectionString = "mongodb://localhost:27017/changeout"
 const options = {
   useNewUrlParser: true,
   useFindAndModify: false,
