@@ -1,7 +1,6 @@
 const db = require('../models');
 
 const index = (req, res) => {
-  console.log('Index Endcaps')
   // if (!req.session.currentUser){
   //   res.status(400);
   //   res.send('Not logged In')
