@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 
-const PORT = 5000;
+const PORT = process.env.PORT || "https://gentle-savannah-74717.herokuapp.com/";
 const routes = require('./routes');
 
 app.use(bodyParser.json());
