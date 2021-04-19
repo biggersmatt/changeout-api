@@ -1,11 +1,10 @@
-const router = require('express').Router();
-const controllers = require('../controllers');
+const router = require("express").Router();
+const controllers = require("../controllers");
 
-// Current Path = '/api/users'
+// Current Path = "/users"
 
-router.post('/signup', controllers.users.create)
-router.post('/login', controllers.users.login)
-router.get('/logout', controllers.users.logout)
-router.delete('/:id', controllers.users.destroy)
+router.get("/", controllers.users.index)
+router.post("/new", controllers.users.create)
+router.put("/:id", controllers.users.update)
 
-module.exports = router;
+module.exports = router; 

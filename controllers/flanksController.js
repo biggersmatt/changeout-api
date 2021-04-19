@@ -1,4 +1,3 @@
-const { json } = require('body-parser');
 const db = require('../models');
 
 const index = (req, res) => {
@@ -21,7 +20,7 @@ const create = (req, res) => {
       if(err) console.log(err);
       res.json({newFlank});
       db.Endcap.findByIdAndUpdate(
-        req.body.selectedEndcap,
+        newFlank.endcap,
         {$push: {flankA: newFlank}},
         {new: true},
         (err, updatedEndcap) => {
@@ -32,7 +31,7 @@ const create = (req, res) => {
       if(err) console.log(err);
       res.json({newFlank});
       db.Endcap.findByIdAndUpdate(
-        req.body.selectedEndcap,
+        newFlank.endcap,
         {$push: {flankB: newFlank}},
         {new: true},
         (err, updatedEndcap) => {
