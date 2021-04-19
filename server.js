@@ -19,32 +19,12 @@ app.use(cors());
 //   origin: CORS_DOMAIN,
 // }))
 
-// ******************* Express Sessions 
-// const sess = {
-//   secret: 'arffarffwoofbark',
-//   resave: false,
-//   saveUninitialized: false,
-//   unset: 'destroy',
-//   cookie: {
-//     maxAge: 1000 * 60 * 60 * 24 * 7 * 2, //valid for 2 weeks. 
-//     sameSite: 'none', 
-//   }
-// }
-// if (process.env.NODE_ENV === 'production') {
-//   app.set('trust proxy', 1);
-//   sess.cookie.secure = true;
-//   console.log('process env chck hit')
-// }
-// app.use(session(sess))
-// ******************* Express Sessions
-
 app.get('/', (req, res) => {
   res.send('<h1>Change Out Api</h1>')
 })
 
 app.use('/endcaps', routes.endcaps);
 app.use('/flanks', routes.flanks);
-app.use('/settings', routes.settings);
 app.use('/users', routes.users)
 
 app.listen(PORT, () => {

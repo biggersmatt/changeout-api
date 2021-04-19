@@ -1,5 +1,3 @@
-const { Mongoose } = require("mongoose");
-
 const mongoose = require('mongoose');
 
 // const connectionString = process.env.MONGODB_URI;
@@ -18,6 +16,5 @@ mongoose.connect(connectionString, options)
 module.exports = {
   Endcap: require('./Endcap'),
   Flank: require('./Flank'),
-  Settings: require('./Settings'),
   User: require('./User')
 }

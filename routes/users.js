@@ -6,8 +6,5 @@ const controllers = require("../controllers");
 router.get("/", controllers.users.index)
 router.post("/new", controllers.users.create)
 router.put("/:id", controllers.users.update)
-// router.post("/login", controllers.users.login)
-// router.get("/logout", controllers.users.logout)
-// router.delete("/:id", controllers.users.destroy)
 
 module.exports = router; 

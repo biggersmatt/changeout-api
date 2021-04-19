@@ -3,7 +3,6 @@ const controllers = require('../controllers');
 
 // Current Path = '/flanks'
 
-// Endcap Routes
 router.get('/', controllers.flanks.index);
 router.get('/:id', controllers.flanks.show);
 router.post('/', controllers.flanks.create);
